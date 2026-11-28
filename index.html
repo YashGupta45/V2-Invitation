@@ -303,6 +303,50 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
 .spk::before{content:"";position:absolute;inset:0;background:radial-gradient(circle,#fff 0 18%,transparent 20%),linear-gradient(0deg,transparent 45%,rgba(255,255,255,.95) 50%,transparent 55%),linear-gradient(90deg,transparent 45%,rgba(255,255,255,.95) 50%,transparent 55%)}
 @keyframes twk{0%,100%{transform:scale(.2) rotate(0);opacity:0}50%{transform:scale(1) rotate(45deg);opacity:1}}
 
+/* carnival & ring exchange (light twin of the reception card) */
+.carn{position:relative;margin:26px auto 0;max-width:400px;border-radius:26px;overflow:hidden;padding:66px 24px 46px;
+  background:radial-gradient(120% 80% at 30% 10%,#fffdf8 0%,#fbf2e6 60%,#f6e4dc 100%);
+  box-shadow:0 22px 46px rgba(110,31,47,.18),inset 0 0 0 1px rgba(185,188,196,.75)}
+.carn::before{content:"";position:absolute;inset:0;background-image:var(--damask);background-size:56px;opacity:.12;pointer-events:none}
+.carn::after{content:"";position:absolute;inset:12px;border-radius:18px;border:1px solid rgba(185,188,196,.8);pointer-events:none;box-shadow:inset 0 0 0 4px transparent,inset 0 0 0 5px rgba(201,169,106,.45)}
+.carn>*{position:relative;z-index:1}
+.carn .bunt{position:absolute;left:0;right:0;top:0;width:100%;height:50px;z-index:1;overflow:visible}
+.bunt .fg{transform-box:fill-box;transform-origin:50% 0;animation:flag 2.4s ease-in-out infinite alternate}
+@keyframes flag{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.carn .k{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);font-weight:500}
+.carn .ti{font-family:var(--serif);line-height:1;margin-top:12px;color:var(--wine)}
+.carn .ti span{display:block}
+.carn .ti span:first-child{font-size:clamp(44px,13vw,54px);font-weight:600}
+.carn .ti .r2{font-style:italic;font-weight:500;font-size:clamp(24px,7.4vw,30px);color:var(--gold-d);margin-top:6px}
+.carn .occ{max-width:30ch;margin:14px auto 0;font-size:12.5px;line-height:1.7;color:var(--ink-l)}
+.rings{display:block;width:150px;height:auto;margin:10px auto 0;overflow:visible}
+.rings .rgp{animation:rfl 4s ease-in-out infinite alternate}
+@keyframes rfl{from{transform:translateY(-3px)}to{transform:translateY(3px)}}
+.rings .ting{transform-box:fill-box;transform-origin:50% 50%;animation:rting 3s ease-in-out infinite}
+@keyframes rting{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+.rings .ting.t2{animation-delay:1.5s}
+.carn .wd{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink);margin-top:6px}
+.carn .dl{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:4px}
+.carn .dl span{flex:1;max-width:80px;padding:6px 0;border-top:1px solid var(--silver);border-bottom:1px solid var(--silver);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--ink-l)}
+.carn .dl b{font-family:var(--serif);font-size:62px;line-height:1;font-weight:600;color:var(--wine)}
+.carn .tm{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;margin-top:10px;color:var(--gold-d)}
+.carn .vn{font-family:var(--serif);font-size:17px;color:var(--wine);margin-top:12px}
+.carn .fl{position:absolute;width:120px;z-index:2;pointer-events:none}
+.carn .fl img{display:block;width:100%;transform:scale(.1) rotate(-70deg);opacity:0;transition:transform 2s cubic-bezier(.2,.9,.25,1.15) .2s,opacity 1.2s .2s}
+.carn.in .fl img{transform:scale(1) rotate(0);opacity:1}
+.carn .fl.a{left:-32px;bottom:-32px}.carn .fl.b{right:-32px;top:-30px}
+.carn .fl.b img{transition-delay:.6s}
+.jub-lead{margin-top:34px}
+
+/* two-event schedule on the save-the-date scroll */
+.sched{display:flex;justify-content:center;align-items:stretch;gap:12px;margin-top:10px}
+.sched>div{flex:1;max-width:120px}
+.sched b{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.sched span{display:block;font-family:var(--serif);font-style:italic;font-size:13.5px;line-height:1.3;color:var(--wine);margin-top:4px}
+.sched i{width:1px;background:linear-gradient(transparent,var(--silver),transparent)}
+.after .brow{margin-top:18px}
+.after .brow .btn{margin-top:0}
+
 /* location */
 .map{display:block;position:relative;margin:26px auto 0;max-width:400px;border-radius:22px;overflow:hidden;text-decoration:none;
   box-shadow:0 18px 40px rgba(110,31,47,.16),inset 0 0 0 1px rgba(185,188,196,.6);background:#f7efe4}
@@ -421,7 +465,7 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
           <span class="em" data-em="scroll"></span>
           <div class="wd">Wednesday</div>
           <div class="drow"><div class="side">December</div><div class="day">09</div><div class="side">2026</div></div>
-          <div class="tm">6:30 pm onwards</div>
+          <div class="sched"><div><b>10:30 am</b><span>Carnival &amp; Ring Exchange</span></div><i></i><div><b>6:30 pm</b><span>Grand Reception</span></div></div>
           <div class="vn">The Taj Crown<small>Nayapalli, Bhubaneswar</small></div>
         </div>
       </div>
@@ -448,9 +492,14 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
     </div>
     <div class="after" id="after">
       <div class="cd" id="cd" aria-live="off"></div>
-      <a class="btn" id="cal" target="_blank" rel="noopener" href="#">
+      <div class="brow">
+      <a class="btn ghost" id="calM" target="_blank" rel="noopener" href="#" aria-label="Add Carnival and Ring Exchange to calendar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
-        Add to calendar</a>
+        10:30 am · Carnival</a>
+      <a class="btn" id="cal" target="_blank" rel="noopener" href="#" aria-label="Add Grand Reception to calendar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M12 13v5M9.5 15.5h5"/></svg>
+        6:30 pm · Reception</a>
+      </div>
       <a class="down cue" href="#storySec"><span>Scroll</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity=".45"/></svg></a>
     </div>
@@ -470,6 +519,46 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
     <div class="dots"></div>
     <button data-d="1" aria-label="Next photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
   </div>
+  <a class="down cue rv" href="#carnSec"><span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity=".45"/></svg></a>
+</section>
+
+<!-- ================= 5a. CARNIVAL & RING EXCHANGE ================= -->
+<section class="sec" id="carnSec">
+  <div class="wrap">
+    <div class="kicker rv">One day · two celebrations</div>
+    <h2 class="h2 rv">The Celebrations</h2>
+    <svg class="orn rv" viewBox="0 0 150 14" aria-hidden="true"><path d="M0 7h60M90 7h60" stroke="#b9bcc4"/><path d="M75 1l6 6-6 6-6-6z" fill="none" stroke="#c9a96a"/><circle cx="75" cy="7" r="1.6" fill="#c9a96a"/></svg>
+  </div>
+  <div class="carn rvc" id="carn">
+    <svg class="bunt" viewBox="0 0 300 50" preserveAspectRatio="none" aria-hidden="true" id="bunt"></svg>
+    <div class="fl a"><img data-rose="bloom" alt=""></div>
+    <div class="fl b"><img data-rose="bloom2" alt=""></div>
+    <div class="k">Morning celebrations</div>
+    <div class="ti"><span>Carnival</span><span class="r2">&amp; Ring Exchange</span></div>
+    <p class="occ">A joyful morning of fun and festivities as Rohit &amp; Archana exchange rings once more</p>
+    <svg class="rings" viewBox="0 0 160 100" aria-hidden="true">
+      <defs>
+        <linearGradient id="rS" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f5f7"/><stop offset=".4" stop-color="#9da0a8"/><stop offset=".65" stop-color="#ffffff"/><stop offset="1" stop-color="#8d9099"/></linearGradient>
+        <linearGradient id="rG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f5e3b8"/><stop offset=".45" stop-color="#b8945a"/><stop offset=".7" stop-color="#fff1cf"/><stop offset="1" stop-color="#9c7b43"/></linearGradient>
+      </defs>
+      <g class="rgp">
+        <circle cx="64" cy="58" r="26" fill="none" stroke="url(#rS)" stroke-width="6"/>
+        <circle cx="96" cy="58" r="26" fill="none" stroke="url(#rG)" stroke-width="6"/>
+        <path d="M85.3 72.9 A26 26 0 0 1 72.9 82.4" fill="none" stroke="url(#rS)" stroke-width="6"/>
+        <path d="M96 22 l7 7 -7 9 -7 -9z" fill="#fdf8f1" stroke="url(#rG)" stroke-width="1.4" stroke-linejoin="round"/>
+        <path d="M89 29 h14" stroke="url(#rG)" stroke-width="1"/>
+      </g>
+      <g class="ting" transform="translate(116 20)"><path d="M0 -8 L1.3 -1.3 L8 0 L1.3 1.3 L0 8 L-1.3 1.3 L-8 0 L-1.3 -1.3Z" fill="#c9a96a"/></g>
+      <g class="ting t2" transform="translate(40 30)"><path d="M0 -6 L1 -1 L6 0 L1 1 L0 6 L-1 1 L-6 0 L-1 -1Z" fill="#b9bcc4"/></g>
+    </svg>
+    <div class="when">
+      <div class="wd">Wednesday</div>
+      <div class="dl"><span>Dec</span><b>09</b><span>2026</span></div>
+      <div class="tm">10:30 am onwards</div>
+    </div>
+    <div class="vn">The Taj Crown, Bhubaneswar</div>
+  </div>
   <a class="down cue rv" href="#jubSec"><span>Scroll</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/><path d="M6 4l6 6 6-6" opacity=".45"/></svg></a>
 </section>
@@ -481,7 +570,7 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
     <div class="fl a"><img data-rose="bloom" alt=""></div>
     <div class="fl b"><img data-rose="bloom2" alt=""></div>
     <div id="spks"></div>
-    <div class="k gold-t">You are invited to the</div>
+    <div class="k gold-t">And in the evening, the</div>
     <div class="gr"><span class="silver-t">Grand</span><span class="gold-t r2">Reception</span></div>
     <div class="occ">celebrating the 25th wedding anniversary of<br><b class="silver-t">Rohit &amp; Archana</b></div>
     <svg class="clink" viewBox="0 0 200 116" aria-hidden="true">
@@ -542,7 +631,7 @@ body.opened .snd{opacity:1;transform:none;pointer-events:auto}
         <g><rect x="180" y="90" width="120" height="26" rx="13" fill="#fff" stroke="#e6d6c0"/><text x="240" y="107" text-anchor="middle" font-family="Playfair Display,serif" font-size="12" fill="#6e1f2f">The Taj Crown</text></g>
       </svg>
     </a>
-    <div class="addr rv"><b>The Taj Crown, Bhubaneswar</b>IHCL SeleQtions · Nayapalli, Bhubaneswar, Odisha<br>Wednesday, 09 December 2026 · 6:30 pm onwards</div>
+    <div class="addr rv"><b>The Taj Crown, Bhubaneswar</b>IHCL SeleQtions · Nayapalli, Bhubaneswar, Odisha<br>Wednesday, 09 December 2026<br>Carnival &amp; Ring Exchange · 10:30 am<br>Grand Reception · 6:30 pm onwards</div>
     <div class="brow rv">
       <a class="btn" id="dirBtn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l9 9-9 9-9-9z"/><path d="M9 13v-2h5V9l2.5 2.5L14 14v-2h-3v1"/></svg>Get directions</a>
       <button class="btn ghost" id="copyBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="8" y="8" width="13" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg>Copy address</button>
@@ -578,7 +667,7 @@ const BG="hero-bg.jpg";
 const MAPS="https://maps.google.com/?q=The+Crown,+Bhubaneswar+-+IHCL+SeleQtions,+Nayapalli,+Bhubaneswar";
 const DIR="https://www.google.com/maps/dir/?api=1&destination=The+Crown%2C+Bhubaneswar+-+IHCL+SeleQtions%2C+Nayapalli%2C+Bhubaneswar";
 const ADDRESS="The Taj Crown (The Crown, Bhubaneswar – IHCL SeleQtions), Nayapalli, Bhubaneswar, Odisha";
-const EVENT_START=new Date("2026-12-09T18:30:00+05:30");
+const EVENT_START=new Date("2026-12-09T10:30:00+05:30"); /* countdown to the first event */
 const root=document.documentElement;
 
 /* viewport height that ignores mobile toolbars jumping */
@@ -685,6 +774,13 @@ function buildGarland(){
     b+=`<g class="bulb" style="animation-delay:${(-(i*.37)%2.2).toFixed(2)}s"><circle cx="${x.toFixed(1)}" cy="${(y+5).toFixed(1)}" r="7" fill="#ffe9a8" opacity=".25"/><circle cx="${x.toFixed(1)}" cy="${(y+5).toFixed(1)}" r="2.4" fill="#fff3c8"/></g>`;}
   $("#garland").innerHTML=p+b;
 }
+function buildBunting(){
+  const N=11,C=["#6e1f2f","#c9a96a","#f3c3cc","#b9bcc4","#8f2c42","#ecd9ad"];
+  let h=`<path d="M-4 4 Q150 44 304 4" fill="none" stroke="#c9a96a" stroke-width=".9" vector-effect="non-scaling-stroke"/>`;
+  for(let i=1;i<N;i++){const t=i/N,x=-4+308*t,y=(1-t)*(1-t)*4+2*(1-t)*t*44+t*t*4;
+    h+=`<path class="fg" style="animation-delay:${(-(i*.41)%2.4).toFixed(2)}s" d="M${(x-8).toFixed(1)} ${y.toFixed(1)} L${(x+8).toFixed(1)} ${y.toFixed(1)} L${x.toFixed(1)} ${(y+17).toFixed(1)}Z" fill="${C[i%C.length]}" opacity=".9"/>`;}
+  $("#bunt").innerHTML=h;
+}
 function buildSparkles(){
   let h="";for(let i=0;i<14;i++){const l=(i*37+11)%92+3,t=(i*53+7)%90+4,s=6+(i*5)%10;h+=`<i class="spk" style="left:${l}%;top:${t}%;width:${s}px;height:${s}px;animation-delay:${(-i*.37).toFixed(2)}s;animation-duration:${(2+i%4*.6).toFixed(1)}s"></i>`}
   $("#spks").innerHTML=h;
@@ -718,7 +814,7 @@ function loadImg(src){return new Promise(res=>{const i=new Image();i.onload=i.on
 async function preload(){
   const fonts=document.fonts?Promise.all(['500 1em "Playfair Display"','italic 500 1em "Playfair Display"','700 1em "Playfair Display"','400 1em "Montserrat"','600 1em "Montserrat"'].map(f=>document.fonts.load(f).catch(()=>{}))):Promise.resolve();
   paintAll();
-  buildIntroRoses();buildDecor();fillRoseImgs();buildStory();buildSparkles();buildGarland();
+  buildIntroRoses();buildDecor();fillRoseImgs();buildStory();buildSparkles();buildGarland();buildBunting();
   const critical=[BG,...Object.values(IMG),"noise.webp","velvet.webp","damask.webp"].map(loadImg);
   const sprites=Promise.all(PETALS.map(loadImg)).then(a=>a.forEach(i=>SPR.push(i)));
   await Promise.race([Promise.all([Promise.race([fonts,new Promise(r=>setTimeout(r,2500))]),sprites,...critical]),new Promise(r=>setTimeout(r,5000))]);
@@ -841,12 +937,13 @@ function tickCD(){
 }
 new IntersectionObserver(es=>{cdVisible=es[0].isIntersecting;clearInterval(cdTimer);if(cdVisible){tickCD();cdTimer=setInterval(tickCD,1000)}}).observe($("#save"));
 tickCD();
-const gcal="https://calendar.google.com/calendar/render?action=TEMPLATE"+
-  "&text="+encodeURIComponent("Grand Reception · Rohit & Archana’s 25th Wedding Anniversary")+
-  "&dates=20261209T130000Z/20261209T180000Z"+
-  "&details="+encodeURIComponent("Celebrating 25 years of love and togetherness. 6:30 pm onwards.\nRSVP: Satyanarayan Bharalawala, Shyam Sunder Gupta & Family · 9437022751 / 9437122623\nMap: "+MAPS)+
+const gcal=(title,dates,when)=>"https://calendar.google.com/calendar/render?action=TEMPLATE"+
+  "&text="+encodeURIComponent(title+" · Rohit & Archana’s 25th Wedding Anniversary")+
+  "&dates="+dates+
+  "&details="+encodeURIComponent("Celebrating 25 years of love and togetherness. "+when+"\nRSVP: Satyanarayan Bharalawala, Shyam Sunder Gupta & Family · 9437022751 / 9437122623\nMap: "+MAPS)+
   "&location="+encodeURIComponent("The Crown, Bhubaneswar - IHCL SeleQtions, Nayapalli, Bhubaneswar");
-$("#cal").href=gcal;
+$("#calM").href=gcal("Carnival & Ring Exchange","20261209T050000Z/20261209T080000Z","10:30 am onwards.");
+$("#cal").href=gcal("Grand Reception","20261209T130000Z/20261209T180000Z","6:30 pm onwards.");
 
 /* ---------------- 3D looping carousel ---------------- */
 function Carousel(el,nav,opt){
